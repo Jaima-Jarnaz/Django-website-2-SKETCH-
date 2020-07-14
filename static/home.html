@@ -1,0 +1,231 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"     href="{%static 'img/logo.png' %}"    type="image/x-icon">
+    <link rel="stylesheet"        href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/navbar-fixed.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/style.css'%}">  
+    <link rel="stylesheet"        href="{%static 'css/style2.css'%}">  
+    <title>HOME of SKETCHES</title>
+    <style>
+        .col-md-4{
+            min-height: 250px;
+        }
+        .artists_section{
+            min-height: 300px;
+            background: linear-gradient(to bottom, #ffffff 2%, #ccffff 100%);
+          
+            
+        }
+        .overlay{
+            min-height: 300px;
+           
+        }
+        .inner{
+            padding-top: 100px;
+            padding-bottom: 70px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-sm ">
+        <div class="container">
+            <a href="#section_home">
+                <img src="{%static 'img/logo.png '%} " class="img-fluid" width='80' height="50" alt="SKETCHES" srcset="">
+            </a>
+            <h3 class="d-inline align-middle navbar-brand font-weight-bold ">SKETCHES</h3>
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id=menu>
+                <ul class="navbar-nav  ml-auto font-weight-bold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallarySection">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="sign-btn" href="accounts/register">Sign Up</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Carousel -->
+    <section id="section_home">
+    <div id="slider1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active carousel-img-1">
+               <div class="container">
+                   <div class="carousel-caption display-3">
+                       <h3 class="btn btn-outline-warning btn-lg rounded font-weight-bold text-light">Sketched by Isrita</h3>
+                   </div>
+               </div>
+            </div>
+
+            <div class="carousel-item  carousel-img-2">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-warning btn-lg rounded font-weight-bold text-light">Sketched by Isrita</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-3">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-warning btn-lg rounded font-weight-bold text-light">Sketched by Isrita</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-4">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-dark btn-lg rounded font-weight-bold text-light">Sketched by Bintu</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-5">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-dark btn-lg rounded font-weight-bold text-light">Sketched by Tonima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-6">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-dark btn-lg rounded font-weight-bold text-light">Sketched by Mithila</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-7">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-success btn-lg rounded font-weight-bold text-light">Sketched by Shamima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-8">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-dark btn-lg rounded font-weight-bold text-light">Sketched by Shamima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-9">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="btn btn-outline-dark btn-lg rounded font-weight-bold text-light">Sketched by Mithila</h3>
+                    </div>
+                </div>
+             </div>
+           
+            <a href="#slider1" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+            <a href="#slider1" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+
+        </div>
+    </div>  
+</section> 
+
+    <!--Photo gallary -->
+
+    <section id="gallarySection" class="p-5 uk-lightbox" >
+            <div class="row text-center py-4">
+                <div class="col">
+                    <h3 class="">Sketch Gallary</h3>
+                </div>
+            </div>
+            <div class="row">
+                {% for images in s%}
+                <div class="col-md-4">
+                   <div>
+                       <a href="{{images.img.url}}">
+                        <img src="{{images.img.url}}" alt="" class="img-fluid py-2">
+                       </a>
+                   </div>
+                </div>
+                {% endfor %}
+            </div>
+
+      
+    </section>
+
+     <!--Artists sections -->
+    
+     <section class="text-dark text-center artists_section py-5" id="artists">
+        <div class="container">
+        <div class="overlay">
+            <div class="inner"> 
+                <div>
+                    <h3>Find amazing sketch artists</h3>
+                </div>
+            <div class="row">
+                <div class="col py-3">
+                    <a href="samima" class="btn btn-outline-primary text-dark m-2 ">Samima Dewan</a>
+                    <a href="tonima" class="btn btn-outline-success text-dark m-2">Tonima</a>
+                    <a href="mithila" class="btn btn-outline-warning text-dark m-2">Mithila Mimi</a>
+                    <a href="isrita" class="btn btn-outline-danger text-dark m-2">IsritaJahan Urmi</a>
+                    <a href="bintu" class="btn btn-outline-info text-dark m-2">Nishat Bintu</a>
+                    <a href="puspo" class="btn btn-outline-secondary text-dark m-2">Puspo</a>
+                    
+                </div>
+            </div>
+            </div>
+        </div> 
+       </div>   
+      
+    </section>
+
+
+
+
+
+    <!---Subscription--->
+
+    <section id="subscribe" class="py-5 text-light text-center" style=" background: rgb(10, 14, 16);">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Wanna get all the updates of sketches??? </h2>
+                    <p class="lead">Then subscribe sketches for further news</p>
+                    <form action="" method="post" class="form-inline justify-content-center">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control m-2" placeholder="Email">
+                            <input type="password" name="pass" class="form-control  m-2" placeholder="Password">
+                            <input type="submit" value="Subscribe" class="btn btn-success  m-2">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   
+    <script src="{% static 'js/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js'   %}"></script>
+    <script src="{% static 'js/navbar-fixed.js'    %}"></script>
+    <script src="{% static 'js/popper.min.js'      %}"></script>
+  
+    
+</body>
+</html>

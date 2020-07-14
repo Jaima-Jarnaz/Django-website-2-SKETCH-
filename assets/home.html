@@ -1,0 +1,167 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"     href="{%static 'img/logo.png' %}"    type="image/x-icon">
+    <link rel="stylesheet"        href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/navbar-fixed.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/style.css'%}">  
+    <link rel="stylesheet"        href="{%static 'css/style2.css'%}">  
+    <title>HOME of SKETCHES</title>
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg navbar-light">
+        <div class="container">
+            <a href="#">
+                <img src="{%static 'img/logo.png '%} " class="img-fluid" width='80' height="50" alt="SKETCHES" srcset="">
+            </a>
+            <h3 class="d-inline align-middle navbar-brand font-weight-bold ">SKETCHES</h3>
+            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id=#navbar>
+                <ul class="navbar-nav  ml-auto font-weight-bold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Catagory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="sign-btn" href="#">Sign Up</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Carousel -->
+    <section>
+    <div id="slider1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active carousel-img-1">
+               <div class="container">
+                   <div class="carousel-caption display-3">
+                       <h3>Sketched by Isrita</h3>
+                   </div>
+               </div>
+            </div>
+
+            <div class="carousel-item  carousel-img-2">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Isrita</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-3">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Isrita</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-4">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Bintu</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-5">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3 class="text-success">Sketched by Tonima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-6">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Mithila</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-7">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Shamima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-8">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Shamima</h3>
+                    </div>
+                </div>
+             </div>
+
+             <div class="carousel-item  carousel-img-9">
+                <div class="container">
+                    <div class="carousel-caption display-3">
+                        <h3>Sketched by Mithila</h3>
+                    </div>
+                </div>
+             </div>
+
+
+
+           
+            <a href="#slider1" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+            <a href="#slider1" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+
+        </div>
+    </div>  
+</section> 
+
+    <!--Photo gallary -->
+
+    <section id="gallarySection" class="py-5 uk-lightbox" >
+        <div class="container">
+            <div class="row text-center py-3">
+                <div class="col">
+                    <h3>Sketch Gallary</h3>
+                </div>
+            </div>
+             {% for images in s%}
+            <div class="row">
+                <div class="col-md-4">
+                   <div>
+                       <a href="{{baseUrl}}/{{s.img}}">
+                        <img src="{{baseUrl}}/{{'s.img'}}" alt="" class="img-fluid w-50%">
+                       </a>
+                   </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <script src="{% static 'js/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js'   %}"></script>
+    <script src="{% static 'js/navbar-fixed.js'    %}"></script>
+    <script src="{% static 'js/popper.min.js'      %}"></script>
+  
+    
+</body>
+</html>

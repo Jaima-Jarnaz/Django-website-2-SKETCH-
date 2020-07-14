@@ -1,0 +1,17 @@
+.navbar{
+    font-size: 1.2rem;
+    background: #fff;
+    opacity: 0.9;
+  // box-shadow: 2px 2px 5px #8bc34a54;
+  .nav-item{
+      padding-right: 18px; 
+  }
+  .nav-item:last-child{
+      padding-right: 0px;
+  }
+}
+#gallarySection{
+    img{
+        min-height: 300px;
+    }
+}

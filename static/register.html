@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"     href="{%static 'img/logo.png' %}"    type="image/x-icon">
+    <link rel="stylesheet"        href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/navbar-fixed.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/style.css'%}">  
+    <link rel="stylesheet"        href="{%static 'css/style2.css'%}">  
+    <title>Sign Up</title>
+    <style>
+        .form-control-user,.btn-user {
+            border: 1px solid #eadede99;
+            border-radius: 12px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-sm ">
+        <div class="container">
+            <a href="#section_home">
+                <img src="{%static 'img/logo.png '%} " class="img-fluid" width='80' height="50" alt="SKETCHES" srcset="">
+            </a>
+            <h3 class="d-inline align-middle navbar-brand font-weight-bold ">SKETCHES</h3>
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id=menu>
+                <ul class="navbar-nav  ml-auto font-weight-bold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallarySection">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="sign-btn" href="accounts/register">Sign Up</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <div class="row ">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <img src="{%static 'img/sketch.jpg '%}" alt="Sign Up Form" class="img-fluid">
+                    </div>
+
+                  
+                    <div class="col-lg-6 bg-light p-3">
+                        {% block content %}
+                
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create your account</h1>
+                        </div>
+                        <form action="register" method="post" class="user">
+                            {% csrf_token %}
+                            <div class="form-group row">
+                               <div class="col-sm-6">
+                                <input type="text" name="firstname" id="" class="form-control form-control-user" placeholder="First Name">
+                               </div>
+
+                               <div class="col-sm-6">
+                                <input type="text" name="lastname" id="" class="form-control form-control-user" placeholder="Last Name">
+                               </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="username" id="" class="form-control form-control-user" placeholder="User Name">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="email" id="" class="form-control form-control-user" placeholder="Email Address">
+                               
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                 <input type="password" name="pass1" id="" class="form-control form-control-user" placeholder="Password">
+                                 {% for message in messages%}
+                                 <h4>{{message}}</h4>
+                                 {% endfor%}
+                              
+                                </div>
+ 
+                                <div class="col-sm-6">
+                                 <input type="password" name="pass2" id="" class="form-control form-control-user" placeholder="Confirm Password">
+                                </div>
+ 
+                             </div>
+                             <input type="submit" value="Sign Up" class="btn btn-outline-success btn-user btn-block">
+                             <hr>
+                             <a href="" class="btn btn-danger btn-google btn-user btn-block">
+                            <i class="fab fa-google fa-fw"></i>
+                            Sign Up with Google
+                            </a>
+
+                            <a href="" class="btn btn-primary btn-facebook btn-user btn-block">
+                                <i class="fab fa-google fa-fw"></i>
+                                Sign Up with Facebook
+                                </a>
+                             
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a href="" class="small">Forgot Password</a>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="login" class="small">Already have an account? Login</a>
+                        </div>
+                        {% endblock%}
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="{% static 'js/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js'   %}"></script>
+    <script src="{% static 'js/popper.min.js'      %}"></script>
+
+</body>
+</html>

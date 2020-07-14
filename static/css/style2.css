@@ -1,0 +1,67 @@
+#sign-btn{
+    border: 1px solid #8BC34A;
+    border-radius: 16px;
+}
+  .carousel-item {
+      height: 350px;
+      width: 100%;
+  }
+
+  .carousel-img-1{
+      background: url('../img/i4.jpg');
+      background-size: contain;
+     
+  }
+  .carousel-img-2{
+    background: url('../img/isrita.jpg');
+    background-size: contain
+}
+.carousel-img-3{
+    background: url('../img/i3.jpg');
+    background-size: cover;
+    background-position: top;
+    background-origin: content-box;
+   
+}
+    
+.carousel-img-4{
+    background: url('../img/bintu.jpg');
+    background-size: cover;
+    background-position: top;
+    background-origin: content-box;
+   
+}
+.carousel-img-5{
+    background: url('../img/tonima.jpg');
+    background-size: contain;
+   
+}
+.carousel-img-6{
+    background: url('../img/m1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-origin: content-box;
+   
+}
+.carousel-img-7{
+    background: url('../img/s2.jpg') repeat-x;
+    background-position: center;
+    background-origin: content-box;
+  
+   
+}
+.carousel-img-8{
+    background: url('../img/s333.jpg') repeat-x;
+    background-position: top;
+    background-origin: content-box;
+   
+}
+.carousel-img-9{
+    background: url('../img/m3.jpg');
+    background-position: top;
+    background-origin: content-box;
+   
+}
+#gallarySection img{
+        min-height: 350px;
+}

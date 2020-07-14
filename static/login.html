@@ -1,0 +1,90 @@
+{% extends 'register.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"     href="{%static 'img/logo.png' %}"    type="image/x-icon">
+    <link rel="stylesheet"        href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/navbar-fixed.css'%}">
+    <link rel="stylesheet"        href="{%static 'css/style.css'%}">  
+    <link rel="stylesheet"        href="{%static 'css/style2.css'%}">  
+    <title>Login Page</title>
+    <style>
+        .form-control-user,.btn-user{
+            border: 1px solid #eadede99;
+            border-radius: 12px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-sm ">
+        <div class="container">
+            <a href="#section_home">
+                <img src="{%static 'img/logo.png '%} " class="img-fluid" width='80' height="50" alt="SKETCHES" srcset="">
+            </a>
+            <h3 class="d-inline align-middle navbar-brand font-weight-bold ">SKETCHES</h3>
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id=menu>
+                <ul class="navbar-nav  ml-auto font-weight-bold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallarySection">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="sign-btn" href="accounts/register">Sign Up</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container ">
+        <div class="card my-5 w-50">
+            <div class="card-body ">
+                {% block content %}
+                <form action="login" method="post">
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">Sign In</h1>
+                    </div>
+        
+                     <div class="form-group">
+                        <input type="text" name="username" id="input-style" class="form-control form-control-user" placeholder="User Name">
+                    </div>
+                    {% for message in messages%}
+                    <h4 class=" text-danger">{{message}}</h4>
+                    {% endfor%}
+                    <div class="form-group">
+                            <input type="password" name="password" id="" class="form-control form-control-user" placeholder="Password">
+                    </div>
+                     <input type="submit" value="Sign In" class="btn btn-primary btn-block btn-user">
+                            
+            </div>
+                </form>
+                {% endblock%}
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="{% static 'js/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js'   %}"></script>
+    <script src="{% static 'js/popper.min.js'      %}"></script>
+
+</body>
+</html>
